@@ -3,6 +3,7 @@
 *.aar
 *.ap_
 *.aab
+.gitignore.bak
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -14,6 +15,8 @@
 bin/
 gen/
 out/
+obj/
+
 #  Uncomment the following line in case you need and you don't have the release build type files in your app
 # release/
 
@@ -32,6 +35,7 @@ proguard/
 
 # Android Studio Navigation editor temp files
 .navigation/
+.vs/
 
 # Android Studio captures folder
 captures/

@@ -1786,24 +1786,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gurion\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\shaha\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gurion\\source\\repos\\HangingMan\\HangingMan\\HangingMan.csproj",
+      "projectUniqueName": "C:\\Projects\\HangingMan\\HangingMan.csproj",
       "projectName": "HangingMan",
-      "projectPath": "C:\\Users\\gurion\\source\\repos\\HangingMan\\HangingMan\\HangingMan.csproj",
-      "packagesPath": "C:\\Users\\gurion\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gurion\\source\\repos\\HangingMan\\HangingMan\\obj\\",
+      "projectPath": "C:\\Projects\\HangingMan\\HangingMan.csproj",
+      "packagesPath": "C:\\Users\\shaha\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\HangingMan\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\gurion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\shaha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

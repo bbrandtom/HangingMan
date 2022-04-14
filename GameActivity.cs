@@ -103,7 +103,7 @@ namespace HangingMan
                 EditText et = new EditText(this);
                 et.LayoutParameters = layoutParams;
                 et.SetTextSize(Android.Util.ComplexUnitType.Px, 1);
-               // et.TextSize = 0;
+                // et.TextSize = 0;
                 et.Gravity = GravityFlags.Center;
                 l1.AddView(et);
                 lines.Add(et);
@@ -125,7 +125,7 @@ namespace HangingMan
             base.OnDestroy();
         }
 
-        protected override void BtnToHebChar(Button btn)
+        public char BtnToHebChar(Button btn)
         {
             if (btn == b1)
             {
@@ -191,27 +191,27 @@ namespace HangingMan
             {
                 return 'ע';
             }
-            else if (btn ==b80)
+            else if (btn == b80)
             {
                 return 'פ';
             }
-            else if (btn ==b90)
+            else if (btn == b90)
             {
                 return 'צ';
             }
-            else if (btn ==b100)
+            else if (btn == b100)
             {
                 return 'ק';
             }
-            else if (btn ==b200)
+            else if (btn == b200)
             {
                 return 'ר';
             }
-            else if (btn ==b300)
+            else if (btn == b300)
             {
                 return 'ש';
             }
-            else if (btn ==b400)
+            else
             {
                 return 'ת';
             }
@@ -224,7 +224,7 @@ namespace HangingMan
             btn.Enabled = false;
             g1.Turn(BtnToHebChar(btn));
             g1.CheckWin();
-            if ((g1.GetWin()=="win")||(g1.GetWin() == "lost"))
+            if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
             {
                 Intent intent = new Intent(this, typeof(OverActivity));
                 intent.PutExtra("text", g1.GetWin());
@@ -234,8 +234,8 @@ namespace HangingMan
             {
                 lines[i].Text = g1.GetGuess()[i].ToString();
             }
-            }
         }
+
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
