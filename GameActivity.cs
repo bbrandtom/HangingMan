@@ -65,6 +65,7 @@ namespace HangingMan
             Words.GetAllData(category);
             w1 = Words.Get();
             AddText(w1);
+            g1 = new GameManager(w1);
             b1.Click += OnClick;
             b2.Click += OnClick;
             b3.Click += OnClick;
@@ -109,7 +110,7 @@ namespace HangingMan
             }
         }
 
-            protected override void OnResume()
+        protected override void OnResume()
         {
             base.OnResume();
             IntentFilter intF = new IntentFilter();
@@ -124,383 +125,115 @@ namespace HangingMan
             base.OnDestroy();
         }
 
-        private void OnClick(object sender, System.EventArgs e)
+        protected override void BtnToHebChar(Button btn)
         {
-            g1 = new GameManager(w1);
-            Button btn = (Button)sender;
             if (btn == b1)
             {
-                b1.SetBackgroundResource(Resource.Drawable.white);
-                b1.Enabled = false;
-                g1.Turn('א');
-                g1.CheckWin();
-                if ((g1.GetWin()=="win")|| (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'א';
             }
-            else if (btn==b2)
+            else if (btn == b2)
             {
-                b2.SetBackgroundResource(Resource.Drawable.white);
-                b2.Enabled = false;
-                g1.Turn('ב');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ב';
             }
             else if (btn == b3)
             {
-                b3.SetBackgroundResource(Resource.Drawable.white);
-                b3.Enabled = false;
-                g1.Turn('ג');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ג';
             }
             else if (btn == b4)
             {
-                b4.SetBackgroundResource(Resource.Drawable.white);
-                b4.Enabled = false;
-                g1.Turn('ד');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ד';
             }
             else if (btn == b5)
             {
-                b5.SetBackgroundResource(Resource.Drawable.white);
-                b5.Enabled = false;
-                g1.Turn('ה');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ה';
             }
             else if (btn == b6)
             {
-                b6.SetBackgroundResource(Resource.Drawable.white);
-                b6.Enabled = false;
-                g1.Turn('ו');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ו';
             }
             else if (btn == b7)
             {
-                b7.SetBackgroundResource(Resource.Drawable.white);
-                b7.Enabled = false;
-                g1.Turn('ז');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ז';
             }
             else if (btn == b8)
             {
-                b8.SetBackgroundResource(Resource.Drawable.white);
-                b8.Enabled = false;
-                g1.Turn('ח');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ח';
             }
             else if (btn == b9)
             {
-                b9.SetBackgroundResource(Resource.Drawable.white);
-                b9.Enabled = false;
-                g1.Turn('ט');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ט';
             }
             else if (btn == b10)
             {
-                b10.SetBackgroundResource(Resource.Drawable.white);
-                b10.Enabled = false;
-                g1.Turn('י');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'י';
             }
             else if (btn == b20)
             {
-                b20.SetBackgroundResource(Resource.Drawable.white);
-                b20.Enabled = false;
-                g1.Turn('כ');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'כ';
             }
             else if (btn == b30)
             {
-                b30.SetBackgroundResource(Resource.Drawable.white);
-                b30.Enabled = false;
-                g1.Turn('ל');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ל';
             }
             else if (btn == b40)
             {
-                b40.SetBackgroundResource(Resource.Drawable.white);
-                b40.Enabled = false;
-                g1.Turn('מ');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'מ';
             }
             else if (btn == b50)
             {
-                b50.SetBackgroundResource(Resource.Drawable.white);
-                b50.Enabled = false;
-                g1.Turn('נ');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'נ';
             }
             else if (btn == b60)
             {
-                b60.SetBackgroundResource(Resource.Drawable.white);
-                b60.Enabled = false;
-                g1.Turn('ס');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ס';
             }
             else if (btn == b70)
             {
-                b70.SetBackgroundResource(Resource.Drawable.white);
-                b70.Enabled = false;
-                g1.Turn('ע');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ע';
             }
-            else if (btn == b80)
+            else if (btn ==b80)
             {
-                b80.SetBackgroundResource(Resource.Drawable.white);
-                b80.Enabled = false;
-                g1.Turn('פ');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'פ';
             }
-            else if (btn == b90)
+            else if (btn ==b90)
             {
-                b90.SetBackgroundResource(Resource.Drawable.white);
-                b90.Enabled = false;
-                g1.Turn('צ');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'צ';
             }
-            else if (btn == b100)
+            else if (btn ==b100)
             {
-                b100.SetBackgroundResource(Resource.Drawable.white);
-                b100.Enabled = false;
-                g1.Turn('ק');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ק';
             }
-            else if (btn == b200)
+            else if (btn ==b200)
             {
-                b200.SetBackgroundResource(Resource.Drawable.white);
-                b200.Enabled = false;
-                g1.Turn('ר');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ר';
             }
-            else if (btn == b300)
+            else if (btn ==b300)
             {
-                b300.SetBackgroundResource(Resource.Drawable.white);
-                b300.Enabled = false;
-                g1.Turn('ש');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ש';
             }
-            else if (btn == b400)
+            else if (btn ==b400)
             {
-                b400.SetBackgroundResource(Resource.Drawable.white);
-                b400.Enabled = false;
-                g1.Turn('ת');
-                g1.CheckWin();
-                if ((g1.GetWin() == "win") || (g1.GetWin() == "lost"))
-                {
-                    Intent intent = new Intent(this, typeof(OverActivity));
-                    intent.PutExtra("text", g1.GetWin());
-                    StartActivity(intent);
-                }
-                for (int i = 0; i < g1.GetWord().letters; i++)
-                {
-                    lines[i].Text = g1.GetGuess()[i].ToString();
-                }
+                return 'ת';
+            }
+        }
+
+        private void OnClick(object sender, System.EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.SetBackgroundResource(Resource.Drawable.white);
+            btn.Enabled = false;
+            g1.Turn(BtnToHebChar(btn));
+            g1.CheckWin();
+            if ((g1.GetWin()=="win")||(g1.GetWin() == "lost"))
+            {
+                Intent intent = new Intent(this, typeof(OverActivity));
+                intent.PutExtra("text", g1.GetWin());
+                StartActivity(intent);
+            }
+            for (int i = 0; i < g1.GetWord().letters; i++)
+            {
+                lines[i].Text = g1.GetGuess()[i].ToString();
+            }
             }
         }
 
