@@ -45,9 +45,16 @@ namespace HangingMan
 
         public static Word Get ()//בחירת מילה מתוך הנושא הנתון 
         {
-            //   int i = r.Next(0, words.Count());
-            //  return words[i];
-            return (new Word("חיות", "דינוזאור", 8));
+            int i = r.Next(0, words.Count());
+            while (true)
+            {
+                // We limit the number of letters to make the game easier.
+                if (words[i].letters <= 5)
+                {
+                    return words[i];
+                }
+                i++;
+            }
         }
 
     }
