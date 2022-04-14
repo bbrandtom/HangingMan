@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--For all properties see: https://aka.ms/android-menu-resource-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:title="Home screen"
+    android:id="@+id/home"
+    android:showAsAction="never"
+    android:orderInCategory="100"/>
+  <item
+    android:title="Add screen"
+    android:id="@+id/add"
+    android:showAsAction="never"
+    android:orderInCategory="200"/>
+</menu>
+
