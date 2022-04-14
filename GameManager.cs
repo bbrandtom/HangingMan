@@ -46,7 +46,7 @@ namespace HangingMan
                 return win;
             }
             string g="";
-            for (int i = 0; i < guess.Length-1; i++)
+            for (int i = 0; i < guess.Length; i++)
             {
                 g += guess[i];
             }
@@ -54,28 +54,27 @@ namespace HangingMan
                 win = "won";
             return win;
         }
-        public void Turn(char i)//ביצוע תור 
+        public void Turn(char guessed_char)//ביצוע תור 
         {
-            int count = word.word.Length-1;
-         //   while (count == -1)
-          //  {
-                while (((i != word.word[count]) && (guess[count] != ' '))&& (count != -1))//בדיקה האם קיימת האות במקום ריק במערך
+            bool correct_guess = false;
+            // Go over the word and check if the guessed character matches a character from the word
+            for (int i=0; i < word.word.Length; i++)
+            {
+                if (guessed_char==word.word[i])
                 {
-                    count--;
+                    guess[i] = guessed_char;
+                    correct_guess = true;
                 }
-                if (count == -1)//האות לא קיימת באינדקס ריק או בכלל
+            }
+
+            if (!correct_guess)
+            {
+                errors+=1;
+                if (errors == 6)
                 {
-                    errors++;
-                    if (errors == 6)// בדיקה האם המשתמש הפסיד 
-                    {
-                        win = "lost";
-                    }
+                    win = "lost";
                 }
-                else// האות קיימת באינדקס ריק ותוסף למערך במיקום המתאים
-                {
-                    guess[count] = i;
-                }
-           // }
+            }
         }
     }
 }
